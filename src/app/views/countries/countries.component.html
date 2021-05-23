@@ -1,0 +1,67 @@
+<div class="view intro-2">
+  <table
+   class="table table-responsive mb-0">
+    <caption></caption>
+    <thead class="col-12">
+      <tr class="d-flex">
+        <th [mdbTableSort]="employees" sortBy="id" id="header-id" class="col-3"># </th>
+        <th [mdbTableSort]="employees" sortBy="name" id="header-name" class="th-sm col-2">Name </th>
+        <th [mdbTableSort]="employees" sortBy="position" id="header-position" class="th-sm col-2">Position </th>
+        <th [mdbTableSort]="employees" sortBy="office" id="header-office" class="th-sm col-2">Office </th>
+        <th [mdbTableSort]="employees" sortBy="age" id="header-age" class="th-sm col-1">Age </th>
+        <th [mdbTableSort]="employees" sortBy="startDate" id="header-StartDate" class="th-sm col-2">Start date </th>
+        <th [mdbTableSort]="employees" sortBy="salary" id="header-salary" class="th-sm col-2">Salary </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees" class="d-flex">
+        <td class="might-overflow col-3">{{employee?.id}}</td>
+        <td class="might-overflow col-2">{{employee?.name}}</td>
+        <td class="might-overflow col-2">{{employee?.position}}</td>
+        <td class="might-overflow col-2">{{employee?.office}}</td>
+        <td class="might-overflow col-1">{{employee?.age}}</td>
+        <td class="might-overflow col-2">{{employee?.startDate | date: 'yy/MM/dd'}}</td>
+        <td class="might-overflow col-2">{{employee?.salary | currency}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="d-flex">
+        <th id="footer-id" class="col-3">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="number" min="0" placeholder="#" [(ngModel)]="filters.id" (ngModelChange)="filter()">
+          </div>
+        </th>
+        <th id="footer-name" class="col-2">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Name" [(ngModel)]="filters.name" (ngModelChange)="filter()">
+          </div>
+        </th>
+        <th id="footer-position" class="col-2">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Position">
+          </div>
+        </th>
+        <th id="footer-office" class="col-2">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Office">
+          </div>
+        </th>
+        <th id="footer-age" class="col-1">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="number" min="0" placeholder="Age">
+          </div>
+        </th>
+        <th id="footer-start-date" class="col-2">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="date" placeholder="Start Date">
+          </div>
+        </th>
+        <th id="footer-salary" class="col-2">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Salary">
+          </div>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

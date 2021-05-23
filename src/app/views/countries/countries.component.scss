@@ -1,0 +1,35 @@
+th {
+  cursor: pointer;
+}
+
+thead,
+tbody tr {
+  display: table;
+  table-layout: fixed;
+}
+
+// thead, tfoot {
+//   width: calc(100% - 1em);
+// }
+
+tbody {
+  max-height: calc(100vh - 230px);
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.might-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.might-overflow:hover {
+  text-overflow: clip;
+  white-space: normal;
+}
